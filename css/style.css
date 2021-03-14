@@ -1,0 +1,87 @@
+:root {
+    --primary: #023e8a;
+    --secondary: #0077b6;
+    --tertiary: #0096c7;
+    --fourth: #ffce00;
+
+    --principalFont: 'Akaya Telivigala', cursive;
+}
+
+html{
+    font-size: 62.5%; /*1rem = 10px*/
+    box-sizing: border-box; /*hack para Box Model*/
+    
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/*Global*/
+body {
+    background-color: var(--secondary);
+    font-size: 1.6rem;
+    line-height: 1.5;
+
+}
+
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto; /*to center content*/
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: var(--secondary);
+    font-family: var(--principalFont);
+}
+
+h1 {
+    font-size: 4rem; 
+}
+h2 {
+    font-size: 3.2rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+
+.header {
+    display: flex;
+    justify-content: center; /*center horizo*/  
+}
+
+.header__logo {
+    margin: 3rem 0;
+}
+
+.navegacion {
+    background-color: var(--primary);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /*separete elements*/
+}
+
+.navegacion__enlace {
+    font-family: var(--principalFont);
+    color: white;
+    font-size: 3rem;
+}
+.navegacion__enlace:hover{
+    color:var(--fourth);
+}
