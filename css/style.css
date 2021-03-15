@@ -1,8 +1,9 @@
 :root {
     --primary: #023e8a;
     --secondary: #0077b6;
-    --tertiary: #0096c7;
+    --tertiary: #6fb7cf;
     --fourth: #ffce00;
+    --five: #caaa29;
 
     --principalFont: 'Akaya Telivigala', cursive;
 }
@@ -36,7 +37,8 @@ a {
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
+
 }
 
 .contenedor {
@@ -46,7 +48,8 @@ img {
 
 h1, h2, h3 {
     text-align: center;
-    color: var(--secondary);
+    text-transform: uppercase;
+    color: var(--fourth);
     font-family: var(--principalFont);
 }
 
@@ -69,19 +72,198 @@ h3 {
     margin: 3rem 0;
 }
 
+.footer {
+    background-color: var(--primary);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__texto {
+    font-family: var(--principalFont);
+    text-align: center;
+    font-size: 2.2rem;
+
+}
 .navegacion {
     background-color: var(--primary);
+    text-transform: uppercase;
     padding: 1rem 0;
     display: flex;
     justify-content: center;
-    gap: 2rem; /*separete elements*/
+    /*gap: 2rem; /*separete elements*/
 }
 
 .navegacion__enlace {
     font-family: var(--principalFont);
     color: white;
     font-size: 3rem;
+    margin-right: 2rem;/*separete elements*/
 }
+.navegacion__enlace:last-of-type { /*select the last type*/
+    margin-right: 0;
+}
+.navegacion__enlace--activo,
 .navegacion__enlace:hover{
     color:var(--fourth);
+}
+/*GRID*/
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+}}
+
+/*products*/
+.producto {
+    background-color: var(--primary);
+    padding: 1rem;
+}
+
+
+.producto__nombre {
+    font-size: 4rem;
+}
+.producto__precio {
+    font-size: 2.8rem;
+    color: var(--fourth);
+}
+
+.producto__nombre,
+.producto__precio{
+    font-family: var(--principalFont);
+    margin: 1rem;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/*graficos*/
+.grafico {
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover; /*image fill empty spaces*/
+    grid-column: 1 / 3;
+}
+.grafico--camisas {
+    grid-row: 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
+
+.grafico--node {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+}
+@media (min-width: 768px) {/*to keep with responsive*/
+    .grafico--node {
+        grid-row: 5 /6;
+        grid-column: 2 / 4;
+    }
+}
+
+.nosotros {
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+@media (min-width: 768px) {
+    .nosotros {
+        
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+    }
+}
+
+.nosotros__imagen {
+    grid-row: 1 / 2;
+
+}
+
+@media (min-width: 768px) {
+    .nosotros__imagen {
+        grid-column: 2 / 3;
+    }
+}
+
+.bloques {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+}
+
+@media (min-width: 768px) {
+    .bloques {
+        grid-template-columns: repeat(4 , 1fr);
+    }
+}
+
+.bloque {
+    text-align: center;
+}
+
+
+.bloque__titulo {
+    margin: 0;
+}
+
+/*Product Page*/
+@media (min-width: 768px) {
+    .camisa {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+        align-items: center;
+    }
+}
+
+.camisa__imagen {
+    margin-top: 2rem;
+}
+
+.formulario {
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .formulario {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+.formulario__campo {
+    /*border-color: var(--primary);
+    border-width: 1rem;
+    border-style: solid;*/
+
+    border: 0.8rem solid var(--primary); /*same as up code*/
+    background-color: transparent;
+    color: white;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+    width: 100%; /*quit leader down options*/
+}
+
+.formulario__submit {
+    background-color: var(--fourth);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--principalFont);
+    padding: 2rem;
+    transition: background-color .3s ease;
+    grid-column:  1 / 3;
+    width: 100%;
+}
+
+.formulario__submit:hover {
+    cursor: pointer;
+    background-color: var(--five);
 }
